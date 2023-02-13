@@ -66,7 +66,34 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+
+          <li class="nav-item {{Route::currentRouteName()=='product.add' ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link {{Route::currentRouteName()=='product.add' ? 'active' : ''}}">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                {{__('form.manage_product') }}
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item ">
+                <a href="{{route('product.add')}}" class="nav-link {{Route::currentRouteName()=='product.add' ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{__('form.add_product') }}</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../forms/advanced.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>{{__('form.list') }}</p>
+                </a>
+              </li>
+             
+            </ul>
+          </li>
+
+
+         {{-- <li class="nav-item">
             <a href="../widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -135,8 +162,9 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          --}}
+          <li class="nav-item  ">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Charts
@@ -145,7 +173,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="chartjs.html" class="nav-link active">
+                <a href="chartjs.html" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>ChartJS</p>
                 </a>

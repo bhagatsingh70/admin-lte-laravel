@@ -7,6 +7,22 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+
+## Setup
+<p align="center">
+Run - composer install <br>
+Add db in .env</p>
+<p align="center">
+php artisan migrate <br>
+php artisan serve<br>
+http://127.0.0.1:8000/</p>
+<br>
+
+## Descrption
+<p align="center">
+Inlcude- AdminLte theme, ,you can add products with validation, compress image, image preview with Sweet alerts.
+</p>
+
 ## Author
  
 Bhagat Singh Chandrawat

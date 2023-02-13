@@ -26,3 +26,4 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="{!! asset('theme/dist/js/demo.js') !!}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
