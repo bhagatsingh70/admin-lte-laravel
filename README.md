@@ -23,6 +23,11 @@ http://127.0.0.1:8000/</p>
 Inlcude- AdminLte theme, ,you can add products with validation, compress image, image preview with Sweet alerts.
 </p>
 
+## Swagger
+<p align="center">
+To run swagger first run npm install <br> npm run dev <br> http://localhost:8000/swagger
+</p>
+
 ## Author
  
 Bhagat Singh Chandrawat
