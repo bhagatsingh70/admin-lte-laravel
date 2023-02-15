@@ -13,7 +13,7 @@ use App\Http\Controllers\{HomeController, ProductController};
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::view('/swagger','swagger');
 Route::get('/', function () {
     return view('welcome');
 });
