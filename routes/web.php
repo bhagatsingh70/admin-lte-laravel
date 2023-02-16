@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{HomeController, ProductController};
+use App\Http\Controllers\{HomeController, ProductController, CategoryController};
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +19,20 @@ Route::get('/', function () {
 });
 
 Route::get('home',[HomeController::class,'home']);
+
 Route::group([
     'prefix'=> '/product',
     'as' => 'product.',
 ], function(){
     Route::get('add',[ProductController::class,'index'])->name('add');
     Route::post('store',[ProductController::class,'store'])->name('store');
+});
+
+Route::group([
+    'prefix'=>'/category',
+    'as'=>'category.',
+], function(){
+    Route::get('add',[CategoryController::class,'create'])->name('add');
+    Route::post('store',[CategoryController::class,'store'])->name('store');
+    Route::get('list',[CategoryController::class,'list'])->name('list');
 });

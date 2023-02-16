@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Api\UserAuthController;
+use App\Http\Controllers\Api\{UserAuthController, CategoryController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +20,12 @@ use Illuminate\Support\Facades\Route;
     Route::post('/login', [UserAuthController::class,'login']);
     Route::post('/register', [UserAuthController::class,'register']);
 
+    Route::group(['prefix'=>'category'],function(){
+        Route::get('list', [CategoryController::class,'list']);
+    });
+ 
+
+    //protectet routes
     Route::middleware('auth:api')->group( function () {
         Route::get('/users', [UserAuthController::class,'listUsers']);
     });

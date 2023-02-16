@@ -27,3 +27,9 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{!! asset('theme/dist/js/demo.js') !!}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- DataTables  & Plugins -->
+<script src="{!! asset('theme/plugins/datatables/jquery.dataTables.min.js') !!}"></script>
+<script src="{!! asset('theme/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') !!}"></script>
+<script src="{!! asset('theme/plugins/datatables-responsive/js/dataTables.responsive.min.js') !!}"></script>
+<script src="{!! asset('theme/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') !!}"></script>
+<script src="{!! asset('theme/plugins/datatables-buttons/js/dataTables.buttons.min.js') !!}"></script>

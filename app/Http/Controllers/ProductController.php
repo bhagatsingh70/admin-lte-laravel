@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Image, File, Storage;
 use App\Models\Product;
 use App\Http\Requests\ProductStoreRequest;
+use App\Http\Services\StorageServices;
 
 class ProductController extends Controller
 {
@@ -43,6 +44,7 @@ class ProductController extends Controller
 
         $image = $request->file('image');
         $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+ 
         // $path = public_path().'/images/thumbnail';
         // File::makeDirectory($path, $mode = 0777, true, true);
         // $destinationPath = public_path('/images/thumbnail');
@@ -51,24 +53,27 @@ class ProductController extends Controller
         //     $constraint->aspectRatio();
         // })->save($destinationPath.'/'.$input['imagename']);
 
-        Storage::disk('public')->makeDirectory('images/thumbnail');
-        Storage::disk('public')->makeDirectory('news');
+        // Storage::disk('public')->makeDirectory('images/product');
+        // Storage::disk('public')->makeDirectory('images/product/thumbnail');
+ 
 
 
         // $img->resize(100, 100, function ($constraint) {
         //     $constraint->aspectRatio();
         // })->save(storage_path('app/public/images/thumbnail/' .$input['imagename']));
-   
 
-        // $destinationPath = public_path('/images');
-        // $image->move(storage_path('app/public/images/' .$image->getClientOriginalName()));
 
         $imageName = $image->getClientOriginalName();
-        $location = 'public/images/thumbnail/' ;
+        $location = 'public/images/product/thumbnail/' ;
         $originalFilename = time() . '-' . $imageName;
-        Storage::disk('local')->putFileAs('public/images', $image,  $originalFilename);
         $fileName =  $location.$originalFilename;
-        Image::make($image)->resize(600,300)->save(storage_path('app/' . $fileName));
+
+        StorageServices::saveFile($request,$image, $folderName='product',  $location, $originalFilename,'285','285');
+
+
+      //  Storage::disk('public')->putFileAs('images/product', $image,  $originalFilename);
+       
+        //Image::make($image)->resize(285,285)->save(storage_path('app/' . $fileName));
         $product = new Product();
         $product->product_name = $request->pname;
         $product->image=$originalFilename;

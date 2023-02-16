@@ -20,7 +20,7 @@ http://127.0.0.1:8000/</p>
 
 ## Descrption
 <p align="center">
-Inlcude- AdminLte theme, ,you can add products with validation, compress image, image preview with Sweet alerts.
+Inlcude- AdminLte theme, you can add products with validation, compress image, image preview with Sweet alerts.
 </p>
 
 ## Swagger

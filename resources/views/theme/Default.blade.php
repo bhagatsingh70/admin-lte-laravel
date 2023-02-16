@@ -24,8 +24,8 @@
   <link rel="stylesheet" href="{!! asset('theme/plugins/bs-stepper/css/bs-stepper.min.css') !!}">
   <!-- dropzonejs -->
   <link rel="stylesheet" href="{!! asset('theme/plugins/dropzone/min/dropzone.min.css') !!}">
- 
   
+  <link rel="stylesheet" href="{!! asset('theme/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') !!}">
   <link href="{!! asset('theme/plugins/fontawesome-free/css/all.min.css') !!}" rel="stylesheet">
   <link href="{!! asset('theme/dist/css/adminlte.min.css') !!}" rel="stylesheet">
 </head>

@@ -1,3 +1,26 @@
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #007bff; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+</style>
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -33,7 +56,12 @@
       </div>
 
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
+      <nav class="mt-2" style="margin: 5px;
+    /* padding: 0px; */
+    /* background-color: green; */
+    width: 102%;
+    height: 500px;
+    overflow: auto;">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -92,6 +120,30 @@
             </ul>
           </li>
 
+          <li class="nav-item {{in_array(Route::currentRouteName(), ['category.add','category.list']) ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link {{in_array(Route::currentRouteName(), ['category.add','category.list'])  ? 'active' : ''}}">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Manage Category
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item ">
+                <a href="{{route('category.add')}}" class="nav-link {{Route::currentRouteName()=='category.add' ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('category.list')}}" class="nav-link {{Route::currentRouteName()=='category.list' ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Category List</p>
+                </a>
+              </li>
+             
+            </ul>
+          </li>
 
          {{-- <li class="nav-item">
             <a href="../widgets.html" class="nav-link">
