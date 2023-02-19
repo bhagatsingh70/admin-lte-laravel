@@ -70,6 +70,19 @@
 
               <div class="col-md-6">
                 <div class="form-group">
+                  <label>Brand</label> 
+                  <select name="brand_id" class="form-control" >
+                      <option value="">Select Brand</option>
+                      @foreach($brands as $brand)
+                        <option  value="{{$brand->id}}"> {{$brand->name}}</option>
+                      @endforeach
+                  </select>
+                  <span style="color:red" class="brand-error error"></span>
+                </div>               
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
                   <label>Tags (comma separated)</label>
                   <input class="form-control" type="text" name="tags"   > 
                   <span style="color:red" class="tags-error error"></span>
@@ -128,7 +141,7 @@
                  <!-- /.form-group -->
                  <div class="form-group">
                   <label>More Image</label>
-                  <input class="form-control imgchangemulti" type="file" multiple name="multiple_image[]"  accept="image/*"   > 
+                  <input class="form-control imgchangemulti" id="imgchangemulti" type="file" multiple name="multiple_image[]"  accept="image/*"   > 
                   <span class="img-preview-multi" id="img-preview-multi" style="  display:none;">  
                
                   </span>

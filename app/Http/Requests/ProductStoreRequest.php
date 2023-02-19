@@ -25,7 +25,15 @@ class ProductStoreRequest extends FormRequest
     {
         return [
             'pname'=>'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+           // 'direction_for_usage'=>'required',
+            //'key_benifits'=>'required',
+            'description'=>'required',
+            'price'=>'required',
+            'price_description'=>'required',
+            'category_id'=>'required',         
+            'brand'=>'required',            
+          //  'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+          'image' => 'required',
         ];
     }
 
@@ -34,6 +42,7 @@ class ProductStoreRequest extends FormRequest
         return [
             'pname.required' => 'Name is required!',
             'image.required' => 'image is required!',
+            'category_id.required' => 'category is required!',
             'image.mimes' => 'Please select correct image!'
         ];
     }

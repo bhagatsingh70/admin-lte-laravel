@@ -76,4 +76,42 @@ $(document).ready(function(){
             }
         });
     })
+
+    $(".imgchange").on('change', function(evt){
+        const [file] =evt.target.files
+      if (file) {           
+          $(".img-preview-src").attr('src',URL.createObjectURL(file));
+          $(".img-preview-src").show()
+      }
+    })
+
+    var checkMultiImageInput = document.getElementById('imgchangemulti');
+    if(checkMultiImageInput){
+    document.querySelector(".imgchangemulti").addEventListener("change", (ev) => {
+            if (!ev.target.files) return; // Do nothing.
+            [...ev.target.files].forEach(preview);
+            $(".img-preview-multi").show()
+        });
+    }
+
+    const preview = (file) => {
+        const fr = new FileReader();
+        fr.onload = () => {
+            const img = document.createElement("img");
+            img.src = fr.result; 
+            img.alt = file.name;
+            img.style = "width: 120px;margin:9px ";
+            document.querySelector('#img-preview-multi').append(img);
+        };
+        fr.readAsDataURL(file);
+        };
+
+
+   
+  
+  
+  $('#summernote, #description, #other_information, #direction_for_usage, #key_benifits ').summernote()
+
+
+  
 })

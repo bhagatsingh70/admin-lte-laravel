@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Api\{UserAuthController, CategoryController};
+use App\Http\Controllers\Api\{BrandController,UserAuthController, CategoryController, ProductController, PriceController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +23,20 @@ use Illuminate\Support\Facades\Route;
     Route::group(['prefix'=>'category'],function(){
         Route::get('list', [CategoryController::class,'list']);
     });
+
+    Route::group(['prefix'=>'master'],function(){
+        Route::get('price-list', [PriceController::class,'list']);
+    });
  
+    Route::group(['prefix'=>'product'],function(){
+        Route::get('filters', [ProductController::class,'filtersList']);
+        Route::get('{first}/{second?}', [ProductController::class,'productList']);
+      
+    });
+
+    Route::group(['prefix'=>'brand'],function(){
+        Route::get('list', [BrandController::class,'list']);
+    });
 
     //protectet routes
     Route::middleware('auth:api')->group( function () {

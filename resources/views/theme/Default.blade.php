@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="{!! asset('theme/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') !!}">
   <link href="{!! asset('theme/plugins/fontawesome-free/css/all.min.css') !!}" rel="stylesheet">
   <link href="{!! asset('theme/dist/css/adminlte.min.css') !!}" rel="stylesheet">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{!! asset('theme/plugins/summernote/summernote-bs4.min.css') !!}">
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">

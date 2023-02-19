@@ -26,6 +26,7 @@ Route::group([
 ], function(){
     Route::get('add',[ProductController::class,'index'])->name('add');
     Route::post('store',[ProductController::class,'store'])->name('store');
+    Route::get('list',[ProductController::class,'list'])->name('list');
 });
 
 Route::group([

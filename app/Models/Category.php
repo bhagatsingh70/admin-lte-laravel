@@ -21,6 +21,10 @@ class Category extends Model
         return Storage::url('images/category/thumbnail/'.$this->category_image);//'/storage/images/category/'.$this->category_image;
     }
 
+    public function scopeActive(){
+        return $this->where('status', '1');
+    }
+    
     protected static function boot()
     {
         parent::boot();
@@ -49,5 +53,12 @@ class Category extends Model
     {
         return $this->hasMany('App\Models\Category','parent','id');
     }
+
+    public function parentCategory()
+    {
+        return $this->hasOne('App\Models\Category','id','parent');
+    }
+
+
 
 }

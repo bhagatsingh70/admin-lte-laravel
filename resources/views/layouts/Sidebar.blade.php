@@ -95,8 +95,8 @@
             </ul>
           </li>
 
-          <li class="nav-item {{Route::currentRouteName()=='product.add' ? 'menu-open' : ''}}">
-            <a href="#" class="nav-link {{Route::currentRouteName()=='product.add' ? 'active' : ''}}">
+          <li class="nav-item {{in_array(Route::currentRouteName(), ['product.add','product.list']) ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link {{in_array(Route::currentRouteName(), ['product.add','product.list']) ? 'active' : ''}}">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 {{__('form.manage_product') }}
@@ -111,7 +111,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../forms/advanced.html" class="nav-link">
+                <a href="{{route('product.list')}}" class="nav-link {{Route::currentRouteName()=='product.list' ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>{{__('form.list') }}</p>
                 </a>
