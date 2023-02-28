@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{HomeController, ProductController, CategoryController};
+use App\Http\Controllers\{HomeController, ProductController, CategoryController, DashboardController};
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +14,8 @@ use App\Http\Controllers\{HomeController, ProductController, CategoryController}
 |
 */
 Route::view('/swagger','swagger');
-Route::get('/',[ProductController::class,'list']);
+Route::get('/',[DashboardController::class,'index']);
+Route::get('/dashboard',[DashboardController::class,'index']);
 Route::get('home',[HomeController::class,'home']);
 
 Route::group([

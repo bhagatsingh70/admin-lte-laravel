@@ -22,6 +22,8 @@ $(document).ready(function(){
                     text: 'Product Added Successfully',
                     icon: 'success',
                     confirmButtonText: 'Ok'
+                  }).then(function() {
+                        window.location.assign(route('product.list'));
                   })
                   $(".img-preview-src").attr('src','').hide();
                   $("#addProductForm").trigger("reset");
@@ -61,7 +63,9 @@ $(document).ready(function(){
                     text: 'Category Added Successfully',
                     icon: 'success',
                     confirmButtonText: 'Ok'
-                  })
+                  }).then(function() {
+                    window.location.assign(route('category.list'));
+                })
                   $(".img-preview-src").attr('src','').hide();
                   $("#addCategoryForm").trigger("reset");
                   $("#addCategoryForm").find('.submit-btn').attr('disabled', false);

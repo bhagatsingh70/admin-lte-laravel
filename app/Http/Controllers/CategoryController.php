@@ -27,7 +27,7 @@ class CategoryController extends Controller
         
         try{
             $image = $request->file('category_image');
-            $location = 'public/images/category/thumbnail/';
+            $location = 'public/images/category/';
             //$smallLocation = 'public/images/category/small/';
             $originalFilename = time() . '.' . $image->getClientOriginalExtension(); 
             $fileName =  $location.$originalFilename;

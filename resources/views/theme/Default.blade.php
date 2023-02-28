@@ -34,6 +34,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Navigation -->
+        @routes
         @include('layouts.Header')
         @include('layouts.Sidebar')
        
