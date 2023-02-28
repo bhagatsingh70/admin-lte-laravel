@@ -104,7 +104,7 @@ class ProductController extends Controller
 
     public function list()
     {
-        $products = Product::get();
+        $products = Product::orderBy('id','desc')->get();
         return view('product.product-list', compact('products'));
         
     }

@@ -31,7 +31,7 @@ class ProductStoreRequest extends FormRequest
             'price'=>'required',
             'price_description'=>'required',
             'category_id'=>'required',         
-            'brand'=>'required',            
+            'brand_id'=>'required',            
           //  'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
           'image' => 'required',
         ];
@@ -41,6 +41,7 @@ class ProductStoreRequest extends FormRequest
     {
         return [
             'pname.required' => 'Name is required!',
+            'brand_id.required' => 'Brand is required!',
             'image.required' => 'image is required!',
             'category_id.required' => 'category is required!',
             'image.mimes' => 'Please select correct image!'
