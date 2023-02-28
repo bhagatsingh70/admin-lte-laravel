@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $catgories = Category::with('child','parentCategory')->status()->get();
+        $catgories = Category::with('child','parentCategory')->active()->get();
         $brands= Brand::active()->get();
         return view('product.add-product', compact('catgories','brands'));
     }

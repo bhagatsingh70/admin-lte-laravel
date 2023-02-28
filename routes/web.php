@@ -14,10 +14,7 @@ use App\Http\Controllers\{HomeController, ProductController, CategoryController}
 |
 */
 Route::view('/swagger','swagger');
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/',[ProductController::class,'list']);
 Route::get('home',[HomeController::class,'home']);
 
 Route::group([
